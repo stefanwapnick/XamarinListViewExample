@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListViewExample.MainPage"
+             Padding="16"
+             Title="Team List">
+
+    <ListView ItemsSource="{Binding TeamList}" SelectedItem="{Binding SelectedTeam, Mode=TwoWay}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="Center">
+              <Label Text="{Binding Name}" HorizontalOptions="StartAndExpand"/>
+              <Label Text="{Binding UpVotes}" TextColor="#008000" VerticalOptions="Center"/>
+              <Image Source="upVotes.png" HeightRequest="16" WidthRequest="16"/>
+              <Label Text="{Binding DownVotes}" TextColor="#d40000" />
+              <Image Source="downVotes.png" HeightRequest="16" WidthRequest="16" VerticalOptions="Center"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    
+</ContentPage>
